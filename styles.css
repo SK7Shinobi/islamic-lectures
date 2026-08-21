@@ -1,37 +1,37 @@
 /* ==========================================================================
    Design tokens
-   Palette keeps the wireframe's warm parchment + espresso-brown scheme,
-   with a deep emerald accent (manuscript ink) and muted gold leaf used
-   sparingly as the signature detail (8-point star motif, hairline rules).
+   Dark charcoal base with coffee-brown panels, warm amber/gold accents,
+   and a crescent-and-star motif used sparingly as the signature detail.
    ========================================================================== */
 :root {
-  --bg: #f7f3ea;
-  --bg-alt: #eee6d3;
-  --bg-alt-2: #e4d9bf;
-  --ink: #241d14;
-  --ink-soft: #6b5d48;
-  --ink-faint: #9a8c72;
-  --brand: #3b2a1c;
-  --brand-hover: #2a1d13;
-  --on-brand: #f7f3ea;
-  --accent: #0e6b57;
-  --accent-soft: #dceee9;
-  --gold: #ad7f3b;
-  --success: #3f7a4f;
-  --success-bg: #e4efe1;
-  --danger: #a23b2e;
-  --danger-bg: #f5e2de;
-  --warning: #9c7a22;
-  --warning-bg: #f3ecd6;
-  --border: #ded2b4;
-  --border-soft: #e8ddc2;
+  color-scheme: dark;
+  --bg: #1b1815;
+  --bg-alt: #2c2016;
+  --bg-alt-2: #3d2c1c;
+  --ink: #f4ecdd;
+  --ink-soft: #cbb79c;
+  --ink-faint: #ab9a7e;
+  --brand: #cf9a45;
+  --brand-hover: #b98530;
+  --on-brand: #201a12;
+  --accent: #45c9a4;
+  --accent-soft: #163a30;
+  --gold: #d7ac66;
+  --success: #7fcf8f;
+  --success-bg: #1f3625;
+  --danger: #ef8c7d;
+  --danger-bg: #3d241f;
+  --warning: #e0bd72;
+  --warning-bg: #3a2f19;
+  --border: #4d3c28;
+  --border-soft: #3a2c1d;
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 16px;
-  --shadow: 0 2px 10px rgba(36, 29, 20, 0.06);
-  --shadow-lift: 0 8px 24px rgba(36, 29, 20, 0.12);
-  --font-display: "Amiri", "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 10px 28px rgba(0, 0, 0, 0.5);
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-body);
   --container: 1220px;
 }
 
@@ -80,6 +80,16 @@ button, input, select, textarea {
   color: inherit;
 }
 
+input, select, textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+select {
+  color-scheme: dark;
+}
+
 img { max-width: 100%; display: block; }
 
 .container {
@@ -106,8 +116,8 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
-   Star motif (signature element) - restrained 8-point geometric star used
-   as a mark, a divider ornament, and a placeholder-thumbnail watermark.
+   Crescent-and-star motif (signature element) - used as the brand mark,
+   a divider ornament, and a placeholder-thumbnail watermark.
    ========================================================================== */
 .star8 {
   display: inline-block;
@@ -118,7 +128,7 @@ summary:focus-visible {
   mask: var(--star-svg) center / contain no-repeat;
 }
 :root {
-  --star-svg: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cGF0aCBkPSdNNTAgMiBMNjEgMzMgTDk0IDMzIEw2NyA1MiBMNzggODUgTDUwIDY1IEwyMiA4NSBMMzMgNTIgTDYgMzMgTDM5IDMzIFonIHRyYW5zZm9ybT0ncm90YXRlKDIyIDUwIDUwKScvPjwvc3ZnPg==");
+  --star-svg: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZD0nTTIxIDEyLjc5QTkgOSAwIDEgMSAxMS4yMSAzIDcgNyAwIDAgMCAyMSAxMi43OXogTTIwIDIuNCBRMjAuNyA0LjMgMjIuNiA1IFEyMC43IDUuNyAyMCA3LjYgUTE5LjMgNS43IDE3LjQgNSBRMTkuMyA0LjMgMjAgMi40IFonLz48L3N2Zz4=");
 }
 
 .divider-ornament {
@@ -292,7 +302,7 @@ summary:focus-visible {
    Cards / panels
    ========================================================================== */
 .panel {
-  background: var(--bg);
+  background: var(--bg-alt);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
   padding: 18px;
@@ -599,7 +609,7 @@ summary:focus-visible {
   gap: 14px;
 }
 @media (max-width: 700px) { .further-learning-grid { grid-template-columns: 1fr; } }
-.fl-card { background: var(--bg); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px; }
+.fl-card { background: var(--bg-alt); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px; }
 .fl-card h4 { display: flex; align-items: center; gap: 7px; color: var(--ink); margin-bottom: 10px; }
 .fl-card h4 svg { color: var(--gold); }
 .fl-card ul { margin: 0; padding: 0; list-style: none; }
@@ -758,11 +768,11 @@ table.curation-table tr.clickable:hover { background: var(--bg-alt-2); cursor: p
    Modal (tag editor)
    ========================================================================== */
 .modal-overlay {
-  position: fixed; inset: 0; background: rgba(36, 29, 20, 0.45);
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.65);
   display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px;
 }
 .modal {
-  background: var(--bg); border-radius: var(--radius-lg); max-width: 480px; width: 100%;
+  background: var(--bg-alt); border-radius: var(--radius-lg); max-width: 480px; width: 100%;
   max-height: 88vh; overflow-y: auto; padding: 22px; box-shadow: var(--shadow-lift);
 }
 .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
@@ -773,7 +783,7 @@ table.curation-table tr.clickable:hover { background: var(--bg-alt-2); cursor: p
 .tag-picker-group h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 8px; }
 .tag-picker-options { display: flex; flex-wrap: wrap; gap: 7px; }
 .tag-pick {
-  border: 1px solid var(--border); background: var(--bg-alt); border-radius: 999px; padding: 5px 12px;
+  border: 1px solid var(--border); background: var(--bg-alt-2); border-radius: 999px; padding: 5px 12px;
   font-size: 0.82rem; cursor: pointer; font-weight: 600; color: var(--ink-soft);
 }
 .tag-pick.selected { background: var(--accent); color: #fff; border-color: var(--accent); }
