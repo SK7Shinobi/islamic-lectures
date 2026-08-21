@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noor Notes — Tiered Islamic Lecture Summaries</title>
+<meta name="description" content="A categorized, tiered summary platform for high-quality Islamic lectures - 20-second, 2-minute, and 10-minute summaries with an advanced tagging system.">
+
+<!-- Optional web fonts (page still looks correct offline via the fallback
+     stacks defined in styles.css if these can't load). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app"><!-- rendered by js/app.js --></div>
+
+<!-- Tagging system: types.ts / tags.ts / validation.ts, ported to plain JS -->
+<script src="js/tagging-system.js"></script>
+<!-- Demo content built on top of the provided seed-data.ts -->
+<script src="js/data.js"></script>
+<!-- Interface-string translations for Settings > Language -->
+<script src="js/i18n.js"></script>
+<!-- App shell: router + rendering + interactions -->
+<script src="js/app.js"></script>
+</body>
+</html>
